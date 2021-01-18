@@ -1,0 +1,4 @@
+# Retirando os modulos para subir para git
+node_modules
+
+.env
