@@ -9,9 +9,10 @@ const bodyParse  = require('body-parser');
 
 const home = require('./routes/home');
 
-const connection = require('./config/Connection');
+const select = require('./dataBase/Selects');
+const coon   = require('./config/Connection');
 
-connection();
+coon.conn();
 
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({extended : true}));
@@ -24,7 +25,7 @@ app.use('/', home);
 app.use('/register', home);
 
 app.listen(port, () => {
-  console.log(`Server is runing in port ${port}`)
+  console.log(`APP: Server is runing in port ${port}`)
 });
 
 module.exports = app;
