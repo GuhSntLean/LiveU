@@ -1,0 +1,34 @@
+<%- include('paritals/header'); -%> 
+  <form class="ui form" method="POST" action="/register" onsubmit="formValidation(); return false">
+    <div class="ui raised very padded text container segment">
+    <div class="column">
+
+      <div class="ui inverted segment">
+        <div class="ui inverted form">
+          <div class="two fields">
+            <div class="field">
+              <label>Nome</label>
+              <input placeholder="Nome" type="text" name="nome">
+            </div>
+            <div class="field">
+              <label>Sobrenome</label>
+              <input placeholder="Sobrenome" type="text" name="sobrenome">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>E-mail</label>
+            <input placeholder="E-mail" type="text" name="email">
+          </div>
+
+          <input class="ui submit button" type="submit" value="Cadastrar">
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </form>
+  <script>
+    $(function(){});
+  </script>
+<%- include('paritals/footer'); -%>

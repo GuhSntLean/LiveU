@@ -1,21 +1,30 @@
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 3000;
+require('dotenv/config');
 
-const handleSave = require('./config/Api');
+const port = process.env.PORT;
 
 const bodyParse  = require('body-parser');
 
 const home = require('./routes/home');
 
-app.use(bodyParse.urlencoded({extended : false}));
+const connection = require('./config/Connection');
+
+connection();
+
 app.use(bodyParse.json());
+app.use(bodyParse.urlencoded({extended : true}));
 
 app.set('view engine', 'ejs');
+app.set('views', './views');
+app.use(express.static(__dirname+'/src'));
 
 app.use('/', home);
+app.use('/register', home);
 
 app.listen(port, () => {
   console.log(`Server is runing in port ${port}`)
 });
+
+module.exports = app;
