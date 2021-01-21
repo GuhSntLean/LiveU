@@ -38,6 +38,8 @@ router.post('/register', async (req, res) => {
 
   console.log(`Valor soma: ${somaTotal}`);
 
+  console.log(select.selectJoin(somaTotal));
+
   res.render('home');
 })
 

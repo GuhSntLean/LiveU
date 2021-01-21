@@ -24,4 +24,17 @@ const selectCode = async (data) => {
  return result;
 }
 
-module.exports = { selectCode };
+const selectJoin = async (data) => {
+  const result = await tp.sql(`SELECT * FROM tbs_animais`)
+                         .execute()
+                         .then((res) => {
+                            console.log(res);
+                         })
+                         .fail((err) => {
+                            console.log(`Erro: ${err}`);
+                         })
+
+  return result;
+}
+
+module.exports = { selectCode, selectJoin };
