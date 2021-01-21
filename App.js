@@ -9,7 +9,7 @@ const bodyParse  = require('body-parser');
 
 const home = require('./routes/home');
 
-const coon   = require('./config/Connection');
+const coon = require('./config/Connection');
 
 coon.conn();
 
