@@ -1,5 +1,11 @@
-const TediousPromise = require('tedious-promises/src/TediousPromise');
-const connection = require('../config/Connection');
+require('dotenv');
+const config = require('../config/Connection');
 
-const tp =  require('tedious-promises');
+const tp = require('tedious-promises');
+const TYPES = require('tedious').TYPES;
 
+tp.setConnectionConfig(config.configPromisse);
+
+
+
+module.exports = {};

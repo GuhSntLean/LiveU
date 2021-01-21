@@ -43,6 +43,7 @@ const config= {
     connection.on('connect', (err) => {
       if(err){
         console.log(`Error: ${err}`);
+        return err;
       }else{
         console.log(`APP: Connection to database was successful`);
       }

@@ -9,7 +9,6 @@ const bodyParse  = require('body-parser');
 
 const home = require('./routes/home');
 
-const select = require('./dataBase/Selects');
 const coon   = require('./config/Connection');
 
 coon.conn();
