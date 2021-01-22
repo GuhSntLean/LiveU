@@ -33,11 +33,11 @@ const selectJoin = async (data) => {
                                 WHERE NOT aux.cor = ANY(SELECT ce.cor FROM tbs_cores_excluidas AS ce
                                  WHERE ce.cor = ANY (SELECT c.cor FROM tbs_cores AS c 
                                  LEFT JOIN tbs_cores_excluidas AS cea
-                                 ON cea.cor = c.cor)) AND aux.total = 14424`)
+                                 ON cea.cor = c.cor)) AND aux.total = ${parseInt(data)}`)
                           .execute()
                           .then((res) => {
                             console.log(res);
-                            return res;
+                            return res[0];
                           })
                           .fail((erro) => {
                             console.log(`Erro: ${erro}`);
