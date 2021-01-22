@@ -1,6 +1,8 @@
 <%- include('paritals/header'); -%> 
   <form class="ui form" method="POST" action="/register" onsubmit="formValidation(); return false">
+    
     <div class="ui raised very padded text container segment">
+    <h1>Cadastre-se</h1>
     <div class="column">
 
       <div class="ui inverted segment">
@@ -24,10 +26,28 @@
           <input class="ui submit button" type="submit" value="Cadastrar">
         </div>
       </div>
-
-    </div>
     </div>
   </form>
+  </div>
+  <div class="ui raised very padded text container segment">
+  <% if (data) { %>
+    <table class="ui celled table">
+      <tbody>
+        <thead>
+          <tr><th>Cor</th>
+          <th>Pais</th>
+          <th>Animal</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Cor"><%= data.cor %></td>
+            <td data-label="Pais"><%= data.pais %></td>
+            <td data-label="Animal"><%= data.animal %></td>
+          </tr>
+      </tbody>
+    </table>
+  <% } %>
+  </div>
   <script>
     $(function(){});
   </script>

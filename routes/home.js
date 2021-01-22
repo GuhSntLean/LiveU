@@ -39,13 +39,13 @@ router.post('/register', async (req, res) => {
   console.log(`Valor soma: ${somaTotal}`);
 
 
-  const result = await select.selectJoin(14424);
+  const result = await select.selectJoin(somaTotal);
 
-  res.render('home');
+  res.render('home', {data: result});
 })
 
 router.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', {data});
 });
 
 module.exports = router;
